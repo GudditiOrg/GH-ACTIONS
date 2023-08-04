@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       conf:
-        description: "true or false"
+        description: "check mark to deploy"
         required: true
         type: boolean
 

@@ -1,4 +1,4 @@
-name: test
+name: cdk-deploy
 on: 
   workflow_dispatch:
     inputs:

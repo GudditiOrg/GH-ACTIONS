@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.conf == 'true' }}
     steps:
-      - run: echo "hello"
+      - run: echo "cdk deploy"
     

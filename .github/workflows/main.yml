@@ -1,24 +1,12 @@
 name: main
-on:
-  push:
-    branches:
-      - main
+on: 
 
-  workflow_run:
-    workflows: ["test1"]
-    types:
-      - completed
+
 
 jobs:
   test1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Test 1
-        run: echo "Running Test 1"
-
+    uses: ./.github/workflows/test2.yml
   test:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.event == 'workflow_run' && github.event.inputs.conf == 'true' }}
-    steps:
-      - name: Run Test after Approval
-        run: echo "Running Test after approval"
+    uses: ./.github/workflows/test.yml
+    needs: test1
+    

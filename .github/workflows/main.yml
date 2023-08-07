@@ -4,13 +4,16 @@ on:
 jobs:
   cdk-diff:
     uses: ./.github/workflows/diff.yml
+
+  test:
+    uses: ./.github/workflows/deploy.yml
+    needs: cdk-diff
+  test3:
+    runs-on: ubuntu-latest
     steps:
       - name: Wait for approval
         uses: your-github-user/manual-approval@your-dev-branch
         with:
           secret: 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 
           approvers: GudditiNaganjaneyulu
-  test:
-    uses: ./.github/workflows/deploy.yml
-    needs: cdk-diff
     

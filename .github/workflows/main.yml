@@ -1,8 +1,6 @@
 name: main
 on: 
-
-
-
+  push:
 jobs:
   test1:
     uses: ./.github/workflows/test2.yml

@@ -1,9 +1,7 @@
 name: test-approval
 
 on:
-  push:
-    branches:
-      - main
+
   workflow_dispatch:
     inputs:
       manual_approval:

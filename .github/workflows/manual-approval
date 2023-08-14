@@ -21,3 +21,4 @@ jobs:
     if: ${{ github.event.inputs.manual_approval == true && github.event.inputs.passphrase == 'Gudditi' }}
     steps:
       - run: echo "This is manual approval"
+

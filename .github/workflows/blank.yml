@@ -16,6 +16,6 @@ on:
 jobs:
   manual-approval:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.manual_approval == true && github.event.inputs.passphrase == 'Gudditi' }}
+    if: ${{ github.event.inputs.manual_approval == 'true' && github.event.inputs.passphrase == 'Gudditi' }}
     steps:
       - run: echo "This is manual approval"

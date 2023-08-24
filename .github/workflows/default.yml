@@ -1,21 +1,26 @@
-name: User Input Workflow
-
+name: feature branches
 on:
   push:
-    branches:
+    branches-ignore:
       - main
   workflow_dispatch:
     inputs:
       user_input:
-        description: 'Enter a value (or press Enter for default)'
+        description: 'give input for specific tests selection or go with default'
         required: true
-        default: 'hello'  # Set your default value here
+        default: 'testng_API'
 
 jobs:
-  user_input_job:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Display input value
-      run: |
-        echo "${{ github.event.inputs.user_input}}"
+      - name: Maven build
+        run: |
+          echo ${{ github.event.inputs.user_input }}
+ 
+
+  
+
+
+
+          

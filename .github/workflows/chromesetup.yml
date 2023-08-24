@@ -1,23 +1,17 @@
-name: feature branches
+name: setup chrome
 
 on:
   push:
     branches-ignore:
       - main
-  workflow_dispatch:
-    inputs:
-      user_input:
-        description: 'give input for specific tests selection or go with default'
-        required: true
-        default: 'testng_API'
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: browser-actions/setup-chrome@v1
-      - run: chrome --version
-      - name: dummy
-        run: echo $user
-        env:
-          user: ${{ github.event.inputs.user_input }}
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        
+      - name: Run Chrome
+        run: google-chrome-stable --version

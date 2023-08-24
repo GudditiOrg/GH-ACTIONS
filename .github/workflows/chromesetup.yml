@@ -15,6 +15,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    steps:
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
       - name: dummy
         run: echo $user
         env:

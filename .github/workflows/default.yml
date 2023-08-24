@@ -8,7 +8,7 @@ on:
     inputs:
       user_input:
         description: 'Enter a value (or press Enter for default)'
-        required: false
+        required: true
         default: 'hello'  # Set your default value here
 
 jobs:

@@ -18,4 +18,4 @@ jobs:
     steps:
     - name: Display input value
       run: |
-        echo ${{ inputs.user_input }}
+        echo "${{ github.event.inputs.user_input}}"

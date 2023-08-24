@@ -1,0 +1,19 @@
+name: User Input Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      user_input:
+        description: 'Enter a value (or press Enter for default)'
+        required: true
+        default: 'hello'  # Set your default value here
+
+jobs:
+  user_input_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Display input value
+      run: |
+        INPUT_VALUE="${{ github.event.inputs.user_input }}"
+        echo "Input value: $INPUT_VALUE"

@@ -18,5 +18,4 @@ jobs:
     steps:
     - name: Display input value
       run: |
-        INPUT_VALUE="${{ inputs.user_input }}"
-        echo "Input value: $INPUT_VALUE"
+        echo ${{ inputs.user_input }}

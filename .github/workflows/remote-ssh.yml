@@ -13,4 +13,11 @@ jobs:
         username: "root"
         password: "Riktech@1725"
         port: "22"
-        script: whoami
+        script: |
+          # change to app directory 
+          cd /root/sniffynose_api 
+          # Check if any containers are running
+          if [[ $(docker ps -q) ]]; then
+            # If containers are running, stop Docker Compose setup
+            docker-compose down
+          fi

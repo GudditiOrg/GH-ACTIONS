@@ -21,8 +21,8 @@ jobs:
             # If containers are running, stop Docker Compose setup
             docker-compose down
           fi
-          # Assuming you have code checked out from a repository branch main , update it
-          git pull origin main
+          # # Assuming you have code checked out from a repository branch main , update it
+          # git pull origin main
           
-          # Start Docker Compose setup with updated code
-          docker-compose up --build -d
+          # # Start Docker Compose setup with updated code
+          # docker-compose up --build -d

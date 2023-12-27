@@ -18,5 +18,8 @@ jobs:
           password: "Riktech@1725"
           port: "22"
           script: |
-            echo ${{ secrets.NAME }} >> log.txt
-            cat log.txt
+            cd /root/sniffynose_api
+            docker-compose down 
+            docker-compose up --build -d \
+              -e APP_ENV=${{ secrets.APP_ENV }} \
+              -e ALLOWED_HOST=${{ secrets.ALLOWED_HOST }}

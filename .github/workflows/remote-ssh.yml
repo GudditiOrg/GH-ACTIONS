@@ -18,6 +18,6 @@ jobs:
           password: "Riktech@1725"
           port: "22"
           script: |
-            echo "hello, $data"
+            echo $data
         env:
           data: ${{ secrets.NAME }}

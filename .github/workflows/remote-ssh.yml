@@ -13,18 +13,10 @@ jobs:
         username: "root"
         password: "Riktech@1725"
         port: "22"
-        script: |
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/github-ssh-key
-          # change to app directory 
-          cd /root/sniffynose_api 
-          # Check if any containers are running
-          if [[ $(docker ps -q) ]]; then
-            # If containers are running, stop Docker Compose setup
-            docker-compose down
-          fi
-          # Assuming you have code checked out from a repository branch main , update it
-          git pull origin master
-          
-          # Start Docker Compose setup with updated code
-          docker-compose up --build -d
+          script: |
+            date
+            echo "hello, $data"
+
+        env:
+          data: ${{ secrets.NAME }}
+          # ALLOWED_HOST: ${{ secrets.ALLOWED_HOST }}

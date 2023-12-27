@@ -18,8 +18,17 @@ jobs:
           password: "Riktech@1725"
           port: "22"
           script: |
+            # change to app directory
             cd /root/sniffynose_api
-            docker-compose down 
-            docker-compose up --build -d \
-              -e APP_ENV=${{ secrets.APP_ENV }} \
-              -e ALLOWED_HOST=${{ secrets.ALLOWED_HOST }}
+
+            # Check if any containers are running
+            if [[ $(docker ps -q) ]]; then
+              # If containers are running, stop Docker Compose setup
+              docker-compose down
+            fi
+
+            # Assuming you have code checked out from a repository branch named 'main', update it
+            # git pull origin master
+
+            # Start Docker Compose setup with updated code
+            docker-compose up --build -d

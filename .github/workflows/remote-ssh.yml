@@ -18,4 +18,5 @@ jobs:
           password: "Riktech@1725"
           port: "22"
           script: |
-            echo ${{ secrets.NAME }}
+            echo ${{ secrets.NAME }} >> log.txt
+            cat log.txt
